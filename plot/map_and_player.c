@@ -6,7 +6,7 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:06:56 by ybourais          #+#    #+#             */
-/*   Updated: 2023/09/13 18:52:23 by ybourais         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:47:21 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,6 @@ void _2_to_3d()
 		}
 		else
 			DDA(x, y0, x, y1, YELLOW);	
-			
 		ray_angle += (FOV_ANGLE/RAYS_NUM);
 		x++;
 	}

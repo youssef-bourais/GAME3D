@@ -6,7 +6,7 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:49:17 by msodor            #+#    #+#             */
-/*   Updated: 2023/09/13 18:53:21 by ybourais         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:14:13 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,24 @@
 # include <limits.h>
 # include <string.h>
 
+#define DARK_BLUE 191970
+#define DARK_ORANGE 0x483C32
+#define DARK_GREEN 0x3e00ed
+
+#define WHITE 0xFFFFFFFF
+#define BLUE 0xFFFF
+#define RED 0xFF0000FF
+#define PURPLE 0xFF00FFFF
+#define YELLOW 0xFFFF00FF
+#define BLACK 0x00000000
+
+#define GREEN 0x00FF00FF
+#define ORANGE 0xFFA500FF
+#define PINK 0xFF69B4FF
+#define CYAN 0x00FFFFFF
+#define GRAY 0x808080FF
+#define BROWN 0xA52A2AFF
+
 # define WIDTH 1800
 # define HEIGHT 1400
 
@@ -37,26 +55,6 @@
 # define RAYS_NUM (WIDTH/RAY_WIDTH)
 # define TO_RADIAN (M_PI/(double)180)
 # define FOV_ANGLE (60*TO_RADIAN)
-
-void plot_map()
-{
-	int i;
-
-	i = 0;
-	while (g_elems.map[i])
-	{
-		int j = 0;
-		while (g_elems.map[i][j])
-		{
-			if(g_elems.map[i][j] == '1')
-				draw_square(RED, MINIMAP_SCALE_FACTOR * (SQUAR_SIZE) * j, MINIMAP_SCALE_FACTOR * (SQUAR_SIZE) * i);
-			else if (g_elems.map[i][j] != ' ')
-				draw_square(GRAY, MINIMAP_SCALE_FACTOR * (SQUAR_SIZE) * j, MINIMAP_SCALE_FACTOR * (SQUAR_SIZE) * i);
-			j++;
-		}
-		i++;
-	}
-}
 
 mlx_t* mlx;
 static	mlx_image_t* image;
