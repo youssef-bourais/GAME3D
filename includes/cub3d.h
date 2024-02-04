@@ -56,15 +56,17 @@
 # define TO_RADIAN (M_PI/(double)180)
 # define FOV_ANGLE (60*TO_RADIAN)
 
-mlx_t* mlx;
-static	mlx_image_t* image;
-
 typedef struct s_txtr
 {
 	int		width;
 	int		height;
 	uint32_t *texture;
 }	t_txtr;
+
+extern mlx_t* mlx;
+
+static	mlx_image_t* image;
+
 
 typedef struct s_elems
 {
@@ -93,7 +95,7 @@ typedef struct s_elems
 	int		f_color[3];
 	int		c_color[3];
 }	t_elems;
-t_elems g_elems;
+t_elems extern g_elems;
 
 
 

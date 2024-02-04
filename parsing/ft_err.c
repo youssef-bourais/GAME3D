@@ -14,7 +14,7 @@
 
 void	ft_err(char *str)
 {
-	write(2, "Error\n", 6);
-	write(2, str, ft_strlen(str));
+	(void)write(2, "Error\n", 6);
+	(void)write(2, str, ft_strlen(str));
 	exit(1);
 }

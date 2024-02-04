@@ -6,7 +6,8 @@ CC = cc
 
 mlx_lib = MLX42/libmlx42.a
 
-DEPENDENCIES = -framework Cocoa -framework OpenGL -framework IOKit
+DEPENDENCIES = ./lib/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm
+#macos # DEPENDENCIES = -framework Cocoa -framework OpenGL -framework IOKit
 
 glfw = $(shell brew --prefix glfw)
 
@@ -24,8 +25,9 @@ OBJS = $(SRS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) Makefile includes/cub3d.h
-		$(CC) $(FLAGS) -o $(NAME) $(SRS) $(DEPENDENCIES) -lglfw -L"$(glfw)/lib" $(mlx_lib)
-
+		$(CC) $(FLAGS) -o $(NAME) $(SRS) $(DEPENDENCIES)
+		#macos # $(CC) $(FLAGS) -o $(NAME) $(SRS) $(DEPENDENCIES) -lglfw -L"$(glfw)/lib" $(mlx_lib)
+		# $(CC) $(CFLAGS) $(VAR_LIBFT) $(OBJS) -L/goinfre/ybourais/brew/opt/readline/lib -o $(NAME) -lreadline -ltermcap
 clean:
 	rm -f $(OBJS)
 
